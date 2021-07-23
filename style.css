@@ -47,6 +47,18 @@ html *{
 }
 
 /*üst menu için*/
+.container .navbar,.toplogos {
+    /*manu çubuğunun transparan olması için*/
+    background-color: rgba(0, 0, 0, .2);
+    display: inline;
+    width: 100%;
+    height: 120px;
+}
+.container .box .navbar,.toplogos{
+    /*menu yukarda sabit kalsın diye*/
+    position: fixed;
+    top: 0;
+}
 .container .box .navbar a{
     text-decoration: none;
     font-style: bold;
@@ -69,10 +81,12 @@ html *{
     margin-top: 60px;
 }
 .container .box .navbar >ul >li:hover{
+    position: sticky;
     background:rgb(136, 23, 23);
     border-radius: 3px;
 }
 .container .box .navbar ul li img{
+    position: sticky;
     width: 20px;
     height: 16px;
 }
@@ -183,7 +197,7 @@ html *{
     color: black;
 }
 /*Haberler Kısmı*/
-.menu .newsandevents{
+.menu >.newsandevents{
     background-color: black;
 }
 /*Haberlerin arka planı için*/
@@ -199,9 +213,55 @@ html *{
     background-size: 20px 20px;
     background-clip: content-box;
 }
+/* animasyon konumu için */
+.menu >.newsandevents >.news{
+    position: relative;
+    width: 100%;
+    height: 750px;
+}
+/*DİKİNE SLİDER İÇİN 1-ANİMASYON*/
+.menu .newsandevents .news .new1,.new2,.new3,.new4{
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    height: 150px;
+    top: 40%;
+    box-sizing: content-box;/*content idi*/
+    animation: animate 15s linear infinite;
+    animation-delay: calc(3s*var(--delay));
+}
+.menu .newsandevents:hover .news{
+    animation-play-state: paused;
+}
+.menu .newsandevents .news:last-child{
+    animation-delay: calc(-3s*var(--delay));
+}
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: translateY(100%) scale(0.5);
+    }
+    5%, 20%{
+        opacity: 0.4;
+        transform: translateY(100%) scale(0.7);
+    }
+    25%, 40%{
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0%) scale(1);
+    }
+    45%, 60%{
+        opacity: 0.4;
+        transform: translateY(-100%) scale(0.7);
+    }
+    65%, 100%{
+        opacity: 0;
+        transform: translateY(-100%) scale(0.5);
+    }
+}
 .menu .news>h4{
     color: #fc0606;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-left: 100px;
     font-size: 20px;
     margin-bottom: 15px;
@@ -315,6 +375,10 @@ html *{
     cursor: pointer;
 }
 .menu .newsandevents .news #allnews{
+    position: absolute;
+    top: 91%;
+}
+.menu .newsandevents .news #allnews{
     color: #fc0606;
     margin-left: 370px;
     text-decoration: none; 
@@ -343,6 +407,34 @@ html *{
     -webkit-transform: scale(1.1); /* Safari 3-8 */
     transform: scale(1.1); 
 }
+/*DİKEY SLIDER DENEMESİ İÇİN CSS 2-KENARLIK*/
+/* .controller{
+    width: 1px;
+    height: 350px;
+    display: block;
+    background: #9c9a9a;
+    transform: translateY(-50%);
+    margin-left: 600px;
+    margin-top: -350px;
+}
+
+#line1,#line2,#line3,#line4{
+    display: table-caption;
+    height: 80px;
+    width: 10px;
+    cursor: pointer;
+    transform: translate(-50%);
+}
+#active{
+    width: 5px;
+    height: 80px;
+    border-radius: 10px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    transition: 0.5s;
+} */
 /*Etkinlikler Kısmı*/
 .menu .events>h4{
     display: table-caption;
@@ -581,68 +673,68 @@ html *{
 .menu .withnumberFirat .student img{
     display: grid;
     padding-top: 25px;
-    padding-left: 220px;
+    padding-left: 250px;
 }
 .menu .withnumberFirat .student h4{
-    padding-left: 200px;
+    padding-left: 230px;
     padding-bottom: 15px;
     font-size: 30px;
     color: ivory;
 }
 .menu .withnumberFirat .student h3{
-    padding-left: 200px;
+    padding-left: 225px;
     padding-bottom: 25px;
     font-size: 16px;
     color: ivory;
 }
 .menu .withnumberFirat .student .student2 img{
     display:table-caption;
-    padding-left: 400px;
+    padding-left: 440px;
     margin-top: -177px;
 }
 .menu .withnumberFirat .student .student2 h4{
-    padding-left: 385px;
+    padding-left: 425px;
     padding-bottom: 15px;
     font-size: 30px;
     color: ivory;
 }
 .menu .withnumberFirat .student .student2 h3{
-    padding-left: 340px;
+    padding-left: 375px;
     padding-bottom: 25px;
     font-size: 16px;
     color: ivory;
 }
 .menu .withnumberFirat .graduated img{
     display:table-caption;
-    padding-left: 580px;
+    padding-left: 620px;
     margin-top: -150px;
 }
 .menu .withnumberFirat .graduated h4{
-    padding-left: 560px;
+    padding-left: 600px;
     padding-bottom: 15px;
     font-size: 30px;
     color: ivory;
 }
 .menu .withnumberFirat .graduated h3{
-    padding-left: 580px;
+    padding-left: 620px;
     padding-bottom: 25px;
     font-size: 16px;
     color: ivory;
 }
 .menu .withnumberFirat .academic img{
     display:table-caption;
-    padding-left: 720px;
+    padding-left: 760px;
     margin-top: -165px;
 }
 .menu .withnumberFirat .academic h4{
-    padding-left: 715px;
+    padding-left: 755px;
     padding-bottom: 15px;
     font-size: 30px;
     color: ivory;
     margin-top: -5px;
 }
 .menu .withnumberFirat .academic h3{
-    padding-left: 715px;
+    padding-left: 755px;
     padding-bottom: 25px;
     font-size: 16px;
     color: ivory;
@@ -650,51 +742,51 @@ html *{
 }
 .menu .withnumberFirat .staff img{
     display:table-caption;
-    padding-left: 890px;
+    padding-left: 930px;
     margin-top: -160px;
 }
 .menu .withnumberFirat .staff h4{
-    padding-left: 880px;
+    padding-left: 920px;
     padding-bottom: 15px;
     font-size: 30px;
     color: ivory;
 }
 .menu .withnumberFirat .staff h3{
-    padding-left: 865px;
+    padding-left: 905px;
     padding-bottom: 25px;
     font-size: 16px;
     color: ivory;
 }
 .menu .withnumberFirat .faculty img{
     display:table-caption;
-    padding-left: 1050px;
+    padding-left: 1080px;
     margin-top: -155px;
 }
 .menu .withnumberFirat .faculty h4{
-    padding-left: 1055px;
+    padding-left: 1085px;
     padding-bottom: 15px;
     font-size: 30px;
     color: ivory;
 }
 .menu .withnumberFirat .faculty h3{
-    padding-left: 1048px;
+    padding-left: 1078px;
     padding-bottom: 25px;
     font-size: 16px;
     color: ivory;
 }
 .menu .withnumberFirat .institute img{
     display:table-caption;
-    padding-left: 1170px;
+    padding-left: 1200px;
     margin-top: -160px;
 }
 .menu .withnumberFirat .institute h4{
-    padding-left: 1185px;
+    padding-left: 1215px;
     padding-bottom: 15px;
     font-size: 30px;
     color: ivory;
 }
 .menu .withnumberFirat .institute h3{
-    padding-left: 1170px;
+    padding-left: 1200px;
     padding-bottom: 25px;
     font-size: 16px;
     color: ivory;
@@ -785,3 +877,6 @@ html *{
     margin-left: 625px;
     margin-right: 614px;
 }
+
+
+

@@ -149,32 +149,41 @@
             <div class="newsandevents">
                 <section class="news">
                     <h4>HABERLER</h4>
-                    <div class="new1">
+                    <div class="new1" style="--delay:-1;">
                         <a id="res"><img src="haber1.jpg"></a>
                         <a id="title1" href="http://www.firat.edu.tr/tr/page/news/universitemiz-ilahiyat-fakultesinden-mezun-olan-ogrencilere-tesvik-odulu-4167" target="_blank">
                              Üniversitemiz İlahiyat Fakültesi'nden Mezun Olan... 
                         </a>
                     </div>
-                    <div class="new2">
+                    <div class="new2" style="--delay:0;">
                         <a id="res2"><img src="haber2.jpg"></a>
                         <a id="title2" href="http://www.firat.edu.tr/tr/page/news/muhendislik-fakultesi-2020-2021-egitim-ogretim-yili-mezuniyet-toreni-yapildi-4160" target="_blank">
                             Mühendislik Fakültesi 2020-2021 Eğitim-Öğretim Yılı... 
                         </a>
                     </div>
-                    <div class="new3">
+                    <div class="new3" style="--delay:1;">
                         <a id="res3"><img src="haber3.jpg"></a>
                         <a id="title3" href="http://www.firat.edu.tr/tr/page/news/universitemiz-mimarlik-fakultesinden-mezun-olan-ogrencilere-tesvik-odulu-4161" target="_blank">
                             Üniversitemiz Mimarlık Fakültesi'nden Mezun Olan...
                         </a>
                     </div>
-                    <div class="new4">
+                    <div class="new4" style="--delay:2;">
                         <a id="res4"><img src="haber4.jpg"></a>
                         <a id="title4" href="http://www.firat.edu.tr/tr/page/news/universitemiz-rektoru-prof-dr-goktas-kktc-cumhurbaskani-tatara-fahri-doktora-unvanini-tevdi-etti-4155" target="_blank">
                             Üniversitemiz Rektörü Prof. Dr. GÖKTAŞ, KKTC...
                         </a>
                     </div>
                     <a id="allnews" href="http://www.firat.edu.tr/tr/page/news" target="_blanks">Tüm Haberler >></a><br><br><br><br>
+                <!--DİKEY SLİDER İÇİN DENEME-->
+                <!-- <div class="controller">
+                    <div id="line1"></div>
+                    <div id="line2"></div>
+                    <div id="line3"></div>
+                    <div id="line4"></div>
+                    <div id="active"></div>
+                </div> -->
                 </section>
+
                 <section class="events">
                     <h4>ETKİNLİKLER</h4>
                     <div class="event1">
@@ -326,8 +335,9 @@
                 <h5>© 2020 Fırat Üniversitesi - Her hakkı saklıdır.</h5>
             </div>
         </div>
-        <!--Baştaki trailer için js kodu-->
+        
         <script>
+            /*Baştaki trailer için js kodu*/
             const clip=document.querySelectorAll('.clip');
             for(let i=0;i<clip.length;i++){
                 clip[i].addEventListener('mouseenter',
@@ -339,6 +349,30 @@
                     clip[i].play()
                 })
             } 
+            /* haberler kısmındaki dikey slider için */
+            /* var news=document.getElementById('news');
+            var active=document.getElementById('active');
+            var line1=document.getElementById('line1');
+            var line2=document.getElementById('line2');
+            var line3=document.getElementById('line3');
+            var line4=document.getElementById('line4');
+
+            line1.onclick=function(){
+                news.style.transform='translateX(0)';
+                active.style.top='0px';
+            }
+            line2.onclick=function(){
+                news.style.transform='translateX(-25%)';
+                active.style.top='80px';
+            }
+            line3.onclick=function(){
+                news.style.transform='translateX(-50%)';
+                active.style.top='160px';
+            }
+            line4.onclick=function(){
+                news.style.transform='translateX(-75%)';
+                active.style.top='240px';
+            } */
         </script>
     </body>
 </html>
